@@ -1,27 +1,63 @@
-const webpack = require("webpack");
-const { getWebpackTools } = require("react-native-monorepo-tools");
+const webpack = require('webpack');
+const path = require('path');
+const { getWebpackTools, getMonorepoRoot } = require('react-native-monorepo-tools');
 
-const monorepoWebpackTools = getWebpackTools();
+const webpackTools = getWebpackTools();
+const monorepoRoot = getMonorepoRoot();
 
+const currentWorkspace = 'electron';
 module.exports = {
   webpack: {
-    configure: (webpackConfig) => {
+    alias: {
+      'react-native$': 'react-native-web',
+      react: `${monorepoRoot}/packages/${currentWorkspace}/node_modules/react`,
+      'react-native': `${monorepoRoot}/packages/${currentWorkspace}/node_modules/react-native-web`,
+      '@react-native-async-storage/async-storage': `${monorepoRoot}/packages/${currentWorkspace}/node_modules/@react-native-async-storage/async-storage`,
+    },
+    configure: webpackConfig => {
+      webpackConfig.externals = {
+        ...webpackConfig.externals,
+      };
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+      };
+      webpackConfig.module.rules = [
+        ...webpackConfig.module.rules,
+        {
+          test: /\.ttf$/,
+          loader: 'url-loader',
+          include: path.resolve(monorepoRoot, 'node_modules', 'react-native-vector-icons'),
+        },
+      ];
+
       // Allow importing from external workspaces.
-      monorepoWebpackTools.enableWorkspacesResolution(webpackConfig);
+      webpackTools.enableWorkspacesResolution(webpackConfig);
       // Ensure nohoisted libraries are resolved from this workspace.
-      monorepoWebpackTools.addNohoistAliases(webpackConfig);
+      // Set webpackConfig.resolve.alias with nohoist settings
+      webpackTools.addNohoistAliases(webpackConfig);
+      console.log(webpackConfig.resolve.alias);
       return webpackConfig;
     },
     plugins: [
-      // Inject the "__DEV__" global variable.
+      // Inject the React Native "__DEV__" global variable.
       new webpack.DefinePlugin({
-        __DEV__: process.env.NODE_ENV !== "production",
+        __DEV__: process.env.NODE_ENV != 'production',
       }),
       // Inject the "__SUBPLATFORM__" global variable.
       // It can be used to determine whether we're running within Electron or not.
       new webpack.DefinePlugin({
-        __SUBPLATFORM__: JSON.stringify("electron"),
+        __SUBPLATFORM__: JSON.stringify('electron'),
       }),
     ],
+  },
+  eslint: {
+    enable: true,
+  },
+  babel: {
+    presets: ['@babel/preset-react'],
+    plugins: [],
+  },
+  typescript: {
+    enableTypeChecking: true,
   },
 };
