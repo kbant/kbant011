@@ -1694,7 +1694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@craco/craco@npm:^6.2.0":
+"@craco/craco@npm:6.4.5, @craco/craco@npm:^6.2.0":
   version: 6.4.5
   resolution: "@craco/craco@npm:6.4.5"
   dependencies:
@@ -2584,7 +2584,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kbant/app@*, @kbant/app@workspace:packages/app":
+"@kbant/app@*, @kbant/app@^1.0.0, @kbant/app@workspace:packages/app":
   version: 0.0.0-use.local
   resolution: "@kbant/app@workspace:packages/app"
   dependencies:
@@ -2627,18 +2627,20 @@ __metadata:
   dependencies:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
-    "@craco/craco": ^6.2.0
-    "@kbant/app": "*"
+    "@craco/craco": 6.4.5
+    "@kbant/app": ^1.0.0
     "@react-native-async-storage/async-storage": ^1.17.11
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
     "@types/react-native": ^0.71.1
+    craco-babel-loader: ^1.0.4
     react: ^18.2.0
     react-dom: ^18.2.0
     react-native: ^0.71.1
     react-native-monorepo-tools: ^1.2.1
+    react-native-vector-icons: ^9.2.0
     react-native-web: ^0.18.12
-    react-scripts: ^4.0.3
+    react-scripts: 4.0.3
     web-vitals: ^3.1.1
   languageName: unknown
   linkType: soft
@@ -2699,7 +2701,6 @@ __metadata:
     "@typescript-eslint/parser": ^5.37.0
     babel-jest: ^29.2.1
     babel-loader: ^8.3.0
-    babel-plugin-module-resolver: ^5.0.0
     babel-plugin-react-native-web: ^0.18.12
     eslint: ^8.19.0
     jest: ^29.2.1
@@ -2721,12 +2722,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kbant/web@workspace:packages/web"
   dependencies:
-    "@craco/craco": ^6.2.0
+    "@craco/craco": 6.4.5
     "@kbant/app": "*"
     "@react-native-async-storage/async-storage": ^1.17.11
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
     "@types/react-native": ^0.71.1
+    craco-babel-loader: ^1.0.4
     react: ^18.2.0
     react-dom: ^18.2.0
     react-native: ^0.71.1
@@ -7149,19 +7151,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-module-resolver@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "babel-plugin-module-resolver@npm:5.0.0"
-  dependencies:
-    find-babel-config: ^2.0.0
-    glob: ^8.0.3
-    pkg-up: ^3.1.0
-    reselect: ^4.1.7
-    resolve: ^1.22.1
-  checksum: d6880e49fc8e7bac509a2c183b4303ee054a47a80032a59a6f7844bb468ebe5e333b5dc5378443afdab5839e2da2b31a6c8d9a985a0047cd076b82bb9161cc78
-  languageName: node
-  linkType: hard
-
 "babel-plugin-named-asset-import@npm:^0.3.7":
   version: 0.3.8
   resolution: "babel-plugin-named-asset-import@npm:0.3.8"
@@ -9092,6 +9081,15 @@ __metadata:
     p-filter: ^2.1.0
     p-map: ^3.0.0
   checksum: e121f13f2b6af4a7c00de17984086a45b67eaaeeb0286a5cf67f2fdaf18d8ce6c2a9fe4ccfa37953e6982f55772f384f040f45f1961530655838c2b7486788a7
+  languageName: node
+  linkType: hard
+
+"craco-babel-loader@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "craco-babel-loader@npm:1.0.4"
+  peerDependencies:
+    "@craco/craco": ^7.0.0 || ^6.4.2
+  checksum: deb1dc56f8befc85be94a48022590bb006e0613e5b4bff6f4916b9cd2b1d3cd1c8b33bdfd0dde2c719f8862d251b9ac4ece3064ddca48387a56e5cb0a2007f59
   languageName: node
   linkType: hard
 
@@ -11896,16 +11894,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-babel-config@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "find-babel-config@npm:2.0.0"
-  dependencies:
-    json5: ^2.1.1
-    path-exists: ^4.0.0
-  checksum: d110308b02fe6a6411a0cfb7fd50af6740fbf5093eada3d6ddacf99b07fc8eea4aa3475356484710a0032433029a21ce733bb3ef88fda1d6e35c29a3e4983014
-  languageName: node
-  linkType: hard
-
 "find-cache-dir@npm:^2.0.0, find-cache-dir@npm:^2.1.0":
   version: 2.1.0
   resolution: "find-cache-dir@npm:2.1.0"
@@ -12507,7 +12495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.1, glob@npm:^8.0.3":
+"glob@npm:^8.0.1":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
   dependencies:
@@ -15713,7 +15701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.1, json5@npm:^2.1.2, json5@npm:^2.2.0, json5@npm:^2.2.2, json5@npm:^2.2.3":
+"json5@npm:^2.1.2, json5@npm:^2.2.0, json5@npm:^2.2.2, json5@npm:^2.2.3":
   version: 2.2.3
   resolution: "json5@npm:2.2.3"
   bin:
@@ -18403,7 +18391,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-up@npm:3.1.0, pkg-up@npm:^3.1.0":
+"pkg-up@npm:3.1.0":
   version: 3.1.0
   resolution: "pkg-up@npm:3.1.0"
   dependencies:
@@ -19969,6 +19957,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-vector-icons@npm:^9.2.0":
+  version: 9.2.0
+  resolution: "react-native-vector-icons@npm:9.2.0"
+  dependencies:
+    prop-types: ^15.7.2
+    yargs: ^16.1.1
+  bin:
+    fa5-upgrade: bin/fa5-upgrade.sh
+    generate-icon: bin/generate-icon.js
+  checksum: 222baf88c3f269234c08a41680e6400a4bf1f4c170f7c2ffac34b2c1c089cdb1084223db2a7d9cc54ee212eec20ff1478f3f482df19062e3057c328642da0be2
+  languageName: node
+  linkType: hard
+
 "react-native-web@npm:^0.18.10, react-native-web@npm:^0.18.12":
   version: 0.18.12
   resolution: "react-native-web@npm:0.18.12"
@@ -20100,7 +20101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-scripts@npm:^4.0.3":
+"react-scripts@npm:4.0.3, react-scripts@npm:^4.0.3":
   version: 4.0.3
   resolution: "react-scripts@npm:4.0.3"
   dependencies:
@@ -20614,13 +20615,6 @@ __metadata:
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
   checksum: eee0e303adffb69be55d1a214e415cf42b7441ae858c76dfc5353148644f6fd6e698926fc4643f510d5c126d12a705e7c8ed7e38061113bdf37547ab356797ff
-  languageName: node
-  linkType: hard
-
-"reselect@npm:^4.1.7":
-  version: 4.1.7
-  resolution: "reselect@npm:4.1.7"
-  checksum: 738d8e2b8f0dca154ad29de6a209c9fbca2d70ae6788fd85df87f2c74b95a65bbf2d16d43a9e2faff39de34d17a29d706ba08a6b2ee5660c09589edbd19af7e1
   languageName: node
   linkType: hard
 
@@ -24729,7 +24723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^16.2.0":
+"yargs@npm:^16.1.1, yargs@npm:^16.2.0":
   version: 16.2.0
   resolution: "yargs@npm:16.2.0"
   dependencies:

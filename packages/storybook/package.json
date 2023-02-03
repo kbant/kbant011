@@ -47,7 +47,6 @@
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^29.2.1",
     "babel-loader": "^8.3.0",
-    "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-react-native-web": "^0.18.12",
     "eslint": "^8.19.0",
     "jest": "^29.2.1",

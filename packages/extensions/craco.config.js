@@ -1,19 +1,24 @@
 const webpack = require('webpack');
 const path = require('path');
+const fs = require('fs');
+
 const { getWebpackTools, getMonorepoRoot } = require('react-native-monorepo-tools');
 
 const webpackTools = getWebpackTools();
 const monorepoRoot = getMonorepoRoot();
 
-
 const currentWorkspace = 'extensions';
+
+// craco babel loader
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+
 module.exports = {
   webpack: {
     alias: {
-      'react-native$': 'react-native-web',
+      // 'react-native$': 'react-native-web',
       react: `${monorepoRoot}/packages/${currentWorkspace}/node_modules/react`,
       'react-native': `${monorepoRoot}/packages/${currentWorkspace}/node_modules/react-native-web`,
-      '@react-native-async-storage/async-storage': `${monorepoRoot}/packages/${currentWorkspace}/node_modules/@react-native-async-storage/async-storage`,
     },
     configure: webpackConfig => {
       webpackConfig.externals = {
@@ -36,7 +41,6 @@ module.exports = {
       // Ensure nohoisted libraries are resolved from this workspace.
       // Set webpackConfig.resolve.alias with nohoist settings
       webpackTools.addNohoistAliases(webpackConfig);
-      console.log(webpackConfig.resolve.alias);
       return webpackConfig;
     },
     plugins: [
@@ -50,10 +54,18 @@ module.exports = {
     enable: true,
   },
   babel: {
-    presets: ['@babel/preset-react', '@babel/preset-typescript'],
+    presets: [],
     plugins: [],
   },
   typescript: {
     enableTypeChecking: true,
   },
+  plugins: [
+    {
+      plugin: require('craco-babel-loader'),
+      options: {
+        includes: [resolveApp('../../node_modules/@react-native-async-storage/async-storage')],
+      },
+    },
+  ],
 };
