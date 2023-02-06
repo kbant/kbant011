@@ -2591,8 +2591,10 @@ __metadata:
     "@react-native-async-storage/async-storage": ^1.17.11
     "@types/react": ^18.0.27
     "@types/react-native": ^0.71.1
+    "@types/react-native-vector-icons": ^6.4.13
     react: ^18.2.0
     react-native: ^0.71.2
+    react-native-vector-icons: ^9.2.0
   languageName: unknown
   linkType: soft
 
@@ -2605,7 +2607,9 @@ __metadata:
     "@react-native-async-storage/async-storage": ^1.17.11
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
+    "@types/react-native-vector-icons": ^6.4.13
     concurrently: ^7.6.0
+    craco-babel-loader: ^1.0.4
     cross-env: ^7.0.3
     electron: 22.0.3
     electron-builder: ^23.6.0
@@ -2614,6 +2618,7 @@ __metadata:
     react-dom: ^18.2.0
     react-native: ^0.71.1
     react-native-monorepo-tools: ^1.2.1
+    react-native-vector-icons: ^9.2.0
     react-native-web: ^0.18.10
     react-scripts: ^4.0.3
     wait-on: ^7.0.1
@@ -2633,6 +2638,7 @@ __metadata:
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
     "@types/react-native": ^0.71.1
+    "@types/react-native-vector-icons": ^6.4.13
     craco-babel-loader: ^1.0.4
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -2656,6 +2662,7 @@ __metadata:
     "@react-native-async-storage/async-storage": ^1.17.11
     "@types/jest": ^29.2.1
     "@types/react": ^18.0.24
+    "@types/react-native-vector-icons": ^6.4.13
     "@types/react-test-renderer": ^18.0.0
     babel-jest: ^29.2.1
     eslint: ^8.19.0
@@ -2665,6 +2672,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.71.1
     react-native-monorepo-tools: ^1.2.1
+    react-native-vector-icons: ^9.2.0
     react-test-renderer: 18.2.0
     typescript: ^4.9.4
   languageName: unknown
@@ -2696,6 +2704,7 @@ __metadata:
     "@types/jest": ^29.2.1
     "@types/react": ^18.0.24
     "@types/react-native": ^0.70.6
+    "@types/react-native-vector-icons": ^6.4.13
     "@types/react-test-renderer": ^18.0.0
     "@typescript-eslint/eslint-plugin": ^5.37.0
     "@typescript-eslint/parser": ^5.37.0
@@ -2712,6 +2721,7 @@ __metadata:
     react-native-monorepo-tools: ^1.2.1
     react-native-safe-area-context: ^4.4.1
     react-native-storybook-loader: ^2.0.5
+    react-native-vector-icons: ^9.2.0
     react-native-web: ^0.18.12
     react-test-renderer: 18.2.0
     typescript: ^4.9.4
@@ -2728,11 +2738,13 @@ __metadata:
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
     "@types/react-native": ^0.71.1
+    "@types/react-native-vector-icons": ^6.4.13
     craco-babel-loader: ^1.0.4
     react: ^18.2.0
     react-dom: ^18.2.0
     react-native: ^0.71.1
     react-native-monorepo-tools: ^1.2.1
+    react-native-vector-icons: ^9.2.0
     react-native-web: ^0.18.10
     react-scripts: ^4.0.3
     web-vitals: ^3.1.1
@@ -5207,7 +5219,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.70.6":
+"@types/react-native-vector-icons@npm:^6.4.13":
+  version: 6.4.13
+  resolution: "@types/react-native-vector-icons@npm:6.4.13"
+  dependencies:
+    "@types/react": "*"
+    "@types/react-native": ^0.70
+  checksum: e954807f7229a84ba6aa15c6952a987e0b45406e501131c0d73fdaa3fe634301d466e22eec8bb23d9c509eb39043fae9cad4ca685b125dc4d6d603dc46b789f7
+  languageName: node
+  linkType: hard
+
+"@types/react-native@npm:^0.70, @types/react-native@npm:^0.70.6":
   version: 0.70.10
   resolution: "@types/react-native@npm:0.70.10"
   dependencies:

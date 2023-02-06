@@ -1,10 +1,11 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import { App } from "@kbant/app";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { App } from '@kbant/app';
+import reportWebVitals from './reportWebVitals';
+import '@kbant/app/src/utils/web-vector-icons';
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 // eslint-disable-next-line
 const root = createRoot(container!);
 

@@ -2,11 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "esnext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "esnext"],
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "forceConsistentCasingInFileNames": true,
@@ -14,8 +10,5 @@
     "resolveJsonModule": true,
     "noEmit": true
   },
-  "include": [
-    "public",
-    "src"
-  ]
+  "include": ["public", "src", "typings/*.d.ts"]
 }

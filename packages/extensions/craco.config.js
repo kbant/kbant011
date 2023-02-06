@@ -20,22 +20,14 @@ module.exports = {
       react: `${monorepoRoot}/packages/${currentWorkspace}/node_modules/react`,
       'react-native': `${monorepoRoot}/packages/${currentWorkspace}/node_modules/react-native-web`,
     },
+    module: {
+      loaders: {
+        test: /\.ttf$/,
+        loader: 'url-loader', // or directly file-loader
+        include: path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
+      },
+    },
     configure: webpackConfig => {
-      webpackConfig.externals = {
-        ...webpackConfig.externals,
-      };
-      webpackConfig.resolve.alias = {
-        ...webpackConfig.resolve.alias,
-      };
-      webpackConfig.module.rules = [
-        ...webpackConfig.module.rules,
-        {
-          test: /\.ttf$/,
-          loader: 'url-loader',
-          include: path.resolve(monorepoRoot, 'node_modules', 'react-native-vector-icons'),
-        },
-      ];
-
       // Allow importing from external workspaces.
       webpackTools.enableWorkspacesResolution(webpackConfig);
       // Ensure nohoisted libraries are resolved from this workspace.
@@ -54,7 +46,7 @@ module.exports = {
     enable: true,
   },
   babel: {
-    presets: [],
+    presets: ['@babel/preset-react'],
     plugins: [],
   },
   typescript: {
@@ -64,7 +56,10 @@ module.exports = {
     {
       plugin: require('craco-babel-loader'),
       options: {
-        includes: [resolveApp('../../node_modules/@react-native-async-storage/async-storage')],
+        includes: [
+          path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
+          resolveApp('../../node_modules/@react-native-async-storage/async-storage'),
+        ],
       },
     },
   ],
