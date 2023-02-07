@@ -47,16 +47,16 @@ module.exports = {
   },
   babel: {
     presets: ['@babel/preset-react'],
-    plugins: [],
-  },
-  typescript: {
-    enableTypeChecking: true,
+    plugins: ['@babel/plugin-proposal-export-namespace-from', 'react-native-reanimated/plugin'],
   },
   plugins: [
     {
       plugin: require('craco-babel-loader'),
       options: {
         includes: [
+          path.resolve(__dirname, '../../node_modules/react-native-reanimated'),
+          path.resolve(__dirname, '../../node_modules/react-native-safe-area-context'),
+          path.resolve(__dirname, '../../node_modules/@react-navigation'),
           path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
           resolveApp('../../node_modules/@react-native-async-storage/async-storage'),
         ],

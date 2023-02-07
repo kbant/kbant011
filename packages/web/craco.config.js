@@ -44,13 +44,23 @@ module.exports = {
   },
   babel: {
     presets: ['@babel/preset-react'],
-    plugins: [],
+    plugins: ['@babel/plugin-proposal-export-namespace-from', 'react-native-reanimated/plugin'],
+  },
+  typescript: {
+    enableTypeChecking: true,
   },
   plugins: [
     {
       plugin: require('craco-babel-loader'),
+      // presets: ['module:metro-react-native-babel-preset'],
+      // plugins: ['@babel/plugin-proposal-class-properties'],
+      // sourceMaps: true,
+      // sourceType: 'unambiguous',
       options: {
         includes: [
+          path.resolve(__dirname, '../../node_modules/react-native-reanimated'),
+          path.resolve(__dirname, '../../node_modules/react-native-safe-area-context'),
+          path.resolve(__dirname, '../../node_modules/@react-navigation'),
           path.resolve(__dirname, '../../node_modules/react-native-vector-icons'),
           resolveApp('../../node_modules/@react-native-async-storage/async-storage'),
         ],

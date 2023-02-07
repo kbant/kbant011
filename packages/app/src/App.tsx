@@ -4,6 +4,14 @@ import { AsyncStorageExample } from './AsyncStorageExample';
 import { subplatform } from './config';
 import LogoSrc from './logo.png';
 import { FacebookButton } from './components/Svg/SampleImage';
+import { AnimatedButton } from './components/Animated/AnimatedButton';
+import AnimatedListExample from './components/Animated/ParticipantList';
+
+if (Platform.OS === 'web') {
+  // @ts-ignore
+  // Issue for react-native-reanimated : https://github.com/software-mansion/react-native-reanimated/issues/3355
+  window._frameTimestamp = null;
+}
 
 export function App(): JSX.Element {
   const platformValue = subplatform ? `${Platform.OS} (${subplatform})` : Platform.OS;
@@ -20,6 +28,7 @@ export function App(): JSX.Element {
         </View>
       </View>
       <FacebookButton />
+      <AnimatedListExample />
       <AsyncStorageExample />
     </SafeAreaView>
   );
