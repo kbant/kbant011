@@ -2,7 +2,7 @@
 // ERROR  TypeError: Cannot read property 'handleClearJSResponder' of null, js engine: hermes
 // - Add react-native-gesture-handler
 // - cd ios && pod install
-// import 'react-native-gesture-handler';
+import 'react-native-gesture-handler';
 import React from 'react';
 import { Button, Text, View, Platform, StyleSheet, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';

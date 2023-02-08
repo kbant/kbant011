@@ -3,7 +3,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Platform } from 'react-native';
 
-import { Icon } from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { createStackNavigator, HeaderStyleInterpolators } from '@react-navigation/stack';
 import { ArticleScreenNames, RootStackParamList } from './types';
 import MainTab from './MainTab';

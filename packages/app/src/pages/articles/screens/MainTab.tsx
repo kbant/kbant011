@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import ArticlesScreen from './ArticlesScreen';
 import { ArticleScreenNames, MainTabParamList } from './types';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -14,7 +14,7 @@ function MainTab() {
         component={ArticlesScreen}
         options={{
           title: '게시글 목록',
-          tabBarIcon: ({ color, size }) => <MaterialIcons name="article" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => <Icon name="article" color={color} size={size} />,
         }}></Tab.Screen>
     </Tab.Navigator>
   );
