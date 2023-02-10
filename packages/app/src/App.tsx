@@ -28,7 +28,6 @@ export function App(): JSX.Element {
         </View>
       </View>
       <FacebookButton />
-      <AnimatedListExample />
       <AsyncStorageExample />
     </SafeAreaView>
   );

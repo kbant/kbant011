@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export type ButtonProps = {
   onPress?: () => void;
@@ -13,28 +13,25 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 4,
-    alignSelf: 'flex-start',
-    flexGrow: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: 'blue',
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
   },
   buttonContainer: {
-    alignItems: 'flex-start',
     flex: 1,
   },
 });
 
 export const Button = ({ text, onPress, color, textColor }: ButtonProps) => (
-  <View style={styles.buttonContainer}>
-    <TouchableOpacity
-      style={[styles.button, !!color && { backgroundColor: color }]}
-      onPress={onPress}
-      activeOpacity={0.8}>
-      <Text style={[styles.buttonText, !!textColor && { color: textColor }]}>{text}</Text>
-    </TouchableOpacity>
-  </View>
+  <Pressable
+    style={[styles.button, !!color && { backgroundColor: color }]}
+    onPress={onPress}
+    android_ripple={{ color: textColor ? textColor : 'white' }}>
+    <Text style={[styles.buttonText, !!textColor && { color: textColor }]}>{text}</Text>
+  </Pressable>
 );
