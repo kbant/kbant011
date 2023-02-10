@@ -9,10 +9,7 @@ export interface Todo {
 
 export const todoState = atom<Todo[]>({
   key: 'todoState',
-  default: [
-    // { id: 1, text: 'Hello React Recoil', done: true },
-    // { id: 2, text: 'Learn Recoil State', done: false },
-  ],
+  default: [],
   effects_UNSTABLE: [persistAtom],
 });
 

@@ -58,6 +58,7 @@ module.exports = {
       // sourceType: 'unambiguous',
       options: {
         includes: [
+          path.resolve(__dirname, '../../node_modules/react-native-paper'),
           path.resolve(__dirname, '../../node_modules/react-native-reanimated'),
           path.resolve(__dirname, '../../node_modules/react-native-safe-area-context'),
           path.resolve(__dirname, '../../node_modules/@react-navigation'),
