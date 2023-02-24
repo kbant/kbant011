@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "watchman watch-del-all && react-native run-ios --reset-cache",
     "lint": "eslint .",
     "start": "watchman watch-del-all && yarn android:localhost && react-native start --reset-cache",
     "android:localhost": "adb devices | grep emulator | awk '{print \"adb -s\", $1, \"reverse tcp:1337 tcp:1337\"}' | xargs -t",

@@ -47,7 +47,7 @@ module.exports = {
   },
   babel: {
     presets: ['@babel/preset-react'],
-    plugins: ['@babel/plugin-proposal-export-namespace-from', 'react-native-reanimated/plugin'],
+    plugins: ['@babel/plugin-proposal-export-namespace-from', 'react-native-reanimated/plugin', 'nativewind/babel'],
   },
   plugins: [
     {

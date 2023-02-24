@@ -15,7 +15,11 @@ module.exports = {
       name: '@storybook/addon-react-native-web',
       options: {
         modulesToTranspile: ['react-native-reanimated', 'react-native-vector-icons'],
-        babelPlugins: ['react-native-reanimated/plugin', '@babel/plugin-proposal-export-namespace-from'],
+        babelPlugins: [
+          'react-native-reanimated/plugin',
+          '@babel/plugin-proposal-export-namespace-from',
+          'nativewind/babel',
+        ],
       },
     },
   ],
