@@ -1,5 +1,12 @@
 # KBANT Project
-monorepo([kbant005](https://github.com/kbant/kbant005)) + storybook
+- monorepo ([kbant005](https://github.com/kbant/kbant005))
+- storybook ([kbant006](https://github.com/kbant/kbant006))
+- react native paper ([kbant007](https://github.com/kbant/kbant007))
+- card ([kbant008](https://github.com/kbant/kbant008))
+- vector icons and react navigation ([kbant009](https://github.com/kbant/kbant009))
+- recoil, todo and react query ([kbant010](https://github.com/kbant/kbant010))
+- nativewind ([kbant011](https://github.com/kbant/kbant011))
+- bbs ([kbant012](https://github.com/kbant/kbant012))
 
 ## Yarn
 ```
