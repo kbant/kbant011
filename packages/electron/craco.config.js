@@ -47,7 +47,18 @@ module.exports = {
   },
   babel: {
     presets: ['@babel/preset-react'],
-    plugins: ['@babel/plugin-proposal-export-namespace-from', 'react-native-reanimated/plugin', 'nativewind/babel'],
+    plugins: [
+      '@babel/plugin-proposal-export-namespace-from',
+      'react-native-reanimated/plugin',
+      [
+        'module-resolver',
+        {
+          alias: {
+            '@app': '../app/src',
+          },
+        },
+      ],
+    ],
   },
   typescript: {
     enableTypeChecking: true,

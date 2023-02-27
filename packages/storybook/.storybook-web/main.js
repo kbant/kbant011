@@ -18,7 +18,14 @@ module.exports = {
         babelPlugins: [
           'react-native-reanimated/plugin',
           '@babel/plugin-proposal-export-namespace-from',
-          'nativewind/babel',
+          [
+            'module-resolver',
+            {
+              alias: {
+                '@app': '../app/src',
+              },
+            },
+          ],
         ],
       },
     },

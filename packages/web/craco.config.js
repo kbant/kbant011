@@ -44,7 +44,18 @@ module.exports = {
   },
   babel: {
     presets: ['@babel/preset-react'],
-    plugins: ['@babel/plugin-proposal-export-namespace-from', 'react-native-reanimated/plugin', 'nativewind/babel'],
+    plugins: [
+      '@babel/plugin-proposal-export-namespace-from',
+      'react-native-reanimated/plugin',
+      [
+        'module-resolver',
+        {
+          alias: {
+            '@app': '../app/src',
+          },
+        },
+      ],
+    ],
   },
   typescript: {
     enableTypeChecking: true,
@@ -52,10 +63,6 @@ module.exports = {
   plugins: [
     {
       plugin: require('craco-babel-loader'),
-      // presets: ['module:metro-react-native-babel-preset'],
-      // plugins: ['@babel/plugin-proposal-class-properties'],
-      // sourceMaps: true,
-      // sourceType: 'unambiguous',
       options: {
         includes: [
           path.resolve(__dirname, '../../node_modules/react-native-paper'),
